@@ -38,12 +38,14 @@ sudo apt-get update
 
 # Install Apache
 # -qq implies -y --force-yes
-sudo apt-get install -qq apache2 apache2-mpm-event
+sudo apt-get install -qq apache2 #apache2-mpm-event
 
 echo ">>> Configuring Apache"
 
 # Add vagrant user to www-data group
 sudo usermod -a -G www-data vagrant
+#añado esto a sabiendas que abajo lo vuelve a hacer. Testing
+sudo a2enmod proxy_fcgi
 
 # Apache Config
 # On separate lines since some may cause an error 
